@@ -1,5 +1,30 @@
-let londonElement = document.querySelector("#london");
-let londonDateElement = londonElement.querySelector(".date");
-let londonTimeElement = londonElement.querySelector(".time");
-londonDateElement.innerHTML = "August 15th 2022";
-londonTimeElement.innerHTML = "1:49:15 <small>AM</small>";
+function updateTime() {
+  let losAngelesElement = document.querySelector("#los-angeles");
+  let losAngelesDateElement = losAngelesElement.querySelector(".date");
+  let losAngelesTimeElement = losAngelesElement.querySelector(".time");
+  let losAngelesTime = moment().tz("America/Los_Angeles");
+  losAngelesDateElement.innerHTML = losAngelesTime.format("MMMM Do YYYY");
+  losAngelesTimeElement.innerHTML = losAngelesTime.format(
+    "h:mm:ss [<small>]A[</small>]"
+  );
+
+  let newYorkElement = document.querySelector("#new-york");
+  let newYorkDateElement = newYorkElement.querySelector(".date");
+  let newYorkTimeElement = newYorkElement.querySelector(".time");
+  let newYorkTime = moment().tz("America/New_York");
+  newYorkDateElement.innerHTML = newYorkTime.format("MMMM Do YYYY");
+  newYorkTimeElement.innerHTML = newYorkTime.format(
+    "h:mm:ss [<small>]A[</small>]"
+  );
+
+  let parisElement = document.querySelector("#paris");
+  let parisDateElement = parisElement.querySelector(".date");
+  let parisTimeElement = parisElement.querySelector(".time");
+  let parisTime = moment().tz("Europe/Paris");
+
+  parisDateElement.innerHTML = parisTime.format("MMMM Do YYYY");
+  parisTimeElement.innerHTML = parisTime.format("h:mm:ss [<small>]A[</small>]");
+}
+
+updateTime();
+setInterval(updateTime, 1000);

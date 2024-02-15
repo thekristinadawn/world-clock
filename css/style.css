@@ -24,7 +24,7 @@ select {
 footer {
   text-align: center;
   font-size: 18px;
-  color: rgba(118, 115, 115, 0.4);
+  color: grey;
 }
 
 .container {
@@ -41,7 +41,7 @@ footer {
   margin: 20px 0;
   justify-content: space-between;
   padding: 20px 0;
-  border-bottom: 1px dashed rgb(246, 238, 238);
+  border-bottom: 1px dashed grey;
 }
 
 .city:last-child {
