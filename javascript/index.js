@@ -3,8 +3,19 @@ function updateTime() {
   let losAngelesDateElement = losAngelesElement.querySelector(".date");
   let losAngelesTimeElement = losAngelesElement.querySelector(".time");
   let losAngelesTime = moment().tz("America/Los_Angeles");
+
   losAngelesDateElement.innerHTML = losAngelesTime.format("MMMM Do YYYY");
   losAngelesTimeElement.innerHTML = losAngelesTime.format(
+    "h:mm:ss [<small>]A[</small>]"
+  );
+
+  let saoPauloElement = document.querySelector("#sao-paulo");
+  let saoPauloDateElement = saoPauloElement.querySelector(".date");
+  let saoPauloTimeElement = saoPauloElement.querySelector(".time");
+  let saoPauloTime = moment().tz("America/Sao_Paulo");
+
+  saoPauloDateElement.innerHTML = saoPauloTime.format("MMMM Do YYYY");
+  saoPauloTimeElement.innerHTML = saoPauloTime.format(
     "h:mm:ss [<small>]A[</small>]"
   );
 
@@ -12,6 +23,7 @@ function updateTime() {
   let newYorkDateElement = newYorkElement.querySelector(".date");
   let newYorkTimeElement = newYorkElement.querySelector(".time");
   let newYorkTime = moment().tz("America/New_York");
+
   newYorkDateElement.innerHTML = newYorkTime.format("MMMM Do YYYY");
   newYorkTimeElement.innerHTML = newYorkTime.format(
     "h:mm:ss [<small>]A[</small>]"
@@ -24,6 +36,14 @@ function updateTime() {
 
   parisDateElement.innerHTML = parisTime.format("MMMM Do YYYY");
   parisTimeElement.innerHTML = parisTime.format("h:mm:ss [<small>]A[</small>]");
+
+  let tokyoElement = document.querySelector("#tokyo");
+  let tokyoDateElement = tokyoElement.querySelector(".date");
+  let tokyoTimeElement = tokyoElement.querySelector(".time");
+  let tokyoTime = moment().tz("Asia/Tokyo");
+
+  tokyoDateElement.innerHTML = tokyoTime.format("MMMM Do YYYY");
+  tokyoTimeElement.innerHTML = tokyoTime.format("h:mm:ss [<small>]A[</small>]");
 }
 
 function updateCity(event) {
@@ -45,7 +65,7 @@ function updateCity(event) {
           )} <small> ${cityTime.format("A")}</small>
           </div>
         </div>
-        <a href="index.html">All Cities</a>
+        <a href="index.html">All Cities  </a>
   `;
 }
 
